@@ -1,0 +1,15 @@
+{
+    "manifest_version": 2,
+    "name": "",
+    "version": "1.0",
+  
+    "description": "Brings profile search button to Twitter web!",
+  
+    "content_scripts": [
+      {
+        "matches": ["https://twitter.com/*"],
+        "js": ["background.js"]
+      }
+    ]
+
+  }
