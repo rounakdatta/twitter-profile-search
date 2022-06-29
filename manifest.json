@@ -1,15 +1,26 @@
 {
-    "manifest_version": 2,
-    "name": "",
-    "version": "1.0",
-  
-    "description": "Brings profile search button to Twitter web!",
-  
-    "content_scripts": [
-      {
-        "matches": ["https://twitter.com/*"],
-        "js": ["background.js"]
-      }
-    ]
-
+  "manifest_version": 3,
+  "name": "TwitterProfileSearch",
+  "version": "1.0",
+  "description": "Brings profile search button to Twitter web!",
+  "permissions": [
+    "scripting",
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "js": [
+        "script.js"
+      ],
+      "matches": [
+        "https://twitter.com/*"
+      ]
+    }
+  ],
+  "host_permissions": [
+    "https://twitter.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
   }
+}
