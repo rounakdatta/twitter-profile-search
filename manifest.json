@@ -1,8 +1,11 @@
 {
   "manifest_version": 3,
-  "name": "TwitterProfileSearch",
+  "name": "Twitter Profile Search",
   "version": "1.0",
-  "description": "Brings profile search button to Twitter web!",
+  "description": "Bringing profile search button to Twitter web!",
+  "icons": {
+    "48": "gosearch.png"
+  },
   "permissions": [
     "scripting",
     "tabs"
