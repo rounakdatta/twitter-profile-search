@@ -68,11 +68,11 @@ function cloneProfilePanelToHeader(username) {
         return null
     }
 
-    const profilePanelClone = profilePanelLookalikes[0].cloneNode(true)
+    let profilePanelClone = profilePanelLookalikes[0].cloneNode(true)
+    profilePanelClone.setAttribute("feature", "profile_search")
 
     let headerPhotoUrl = getHeaderPhotoRelativeURL(username)
     let baseHeaderPanelIdentifier = `[href="${headerPhotoUrl}"]`
-
 
     // locate the header panel base div, and append the profile panel clone to it
     let headerArea = document.querySelectorAll(baseHeaderPanelIdentifier)
@@ -84,6 +84,12 @@ function cloneProfilePanelToHeader(username) {
         headerPanel = headerArea[0].getElementsByClassName(BLANK_HEADER_PANEL_CLASS)[0]
     } else {
         headerPanel = headerArea[0].getElementsByClassName(HEADER_PANEL_CLASS)[0]
+    }
+
+    // we need to delete if the search button was carried over from last page
+    let lastHeaderPanelElement = headerPanel.lastChild
+    if (lastHeaderPanelElement != null && lastHeaderPanelElement.getAttribute("feature") == "profile_search") {
+        headerPanel.removeChild(lastHeaderPanelElement)
     }
 
     headerPanel.appendChild(profilePanelClone)
@@ -102,6 +108,11 @@ function transformItemsInHeaderPanel(headerPanel, username) {
     // handle self-profile case
     if (actionButtons.length == 0) {
         actionButtons = headerActionPanel.children[1].querySelectorAll('[data-testid="editProfileButton"]')
+    }
+
+    // handle transitions from self-profile to another user
+    if (actionButtons.length == 0) {
+        actionButtons = headerActionPanel.children[1].querySelectorAll('[role="link"]')
     }
 
     // mark all but last action button as completely hidden
