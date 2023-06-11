@@ -138,6 +138,8 @@ function act(currentURL) {
 chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
         if (request.message === 'BUILD_TWITTER_PROFILE_SEARCH') {
-            act(request.url)
+            window.setTimeout(function () {
+                act(request.url)
+            }, 2000) // TODO: trigger this only after page completely loads
         }
     });
