@@ -19,5 +19,5 @@ The Chrome extension gets triggered when a Twitter user profile page gets opened
 
 ### Improvements
 
-- [ ] The process of building the search button starts 2s after the page is loaded. We can do better by waiting till the DOM is loaded, instead of the arbitrary *2s*.
+- [x] The process of building the search button starts 2s after the page is loaded. We can do better by waiting till the DOM is loaded, instead of the arbitrary *2s*.
 - [ ] The search button is not clearly visible at all times - especially when there's a bright colour in the header image. Having a dynamically adjusted contrast should be better.
