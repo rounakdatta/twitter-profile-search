@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Twitter Profile Search",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Bringing profile search button to Twitter web!",
   "icons": {
     "48": "gosearch.png"
@@ -15,6 +15,7 @@
       "js": [
         "script.js"
       ],
+      "run_at": "document_idle",
       "matches": [
         "https://twitter.com/*"
       ]

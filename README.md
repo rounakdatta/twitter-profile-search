@@ -4,6 +4,8 @@ Twitter Profile Search does exactly what it implies. It brings the profile searc
 
 I think the feature is useful, hope you find value!
 
+NOTE: Sometimes the search button just behaves wierdly, it takes you the profile settings page or with an empty `@`. Please refresh furiously on the profile page, or send across a PR if you know the fix 🥹
+
 ### Working
 
 The Chrome extension gets triggered when a Twitter user profile page gets opened. It adds an extra search button to the **top right** of the profile area. The behaviour is intended to be same as on mobile.
@@ -19,5 +21,5 @@ The Chrome extension gets triggered when a Twitter user profile page gets opened
 
 ### Improvements
 
-- [ ] The process of building the search button starts 2s after the page is loaded. We can do better by waiting till the DOM is loaded, instead of the arbitrary *2s*.
+- [x] The process of building the search button starts 2s after the page is loaded. We can do better by waiting till the DOM is loaded, instead of the arbitrary *2s*.
 - [ ] The search button is not clearly visible at all times - especially when there's a bright colour in the header image. Having a dynamically adjusted contrast should be better.
